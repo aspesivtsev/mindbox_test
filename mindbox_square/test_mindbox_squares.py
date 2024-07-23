@@ -22,9 +22,21 @@ class TestTriangle(unittest.TestCase):
 
 
 class TestCircle(unittest.TestCase):
+    """Testing the circle area"""
     def test_correct_circle_area(self):
+        """Testing with the correct value"""
         self.assertEqual(compute_circle_area_from_radius(3), 28.2743)
+
+    def test_on_zero_radius(self):
+        """Testing with the zero radius"""
+        with self.assertRaises(ValueError):
+            compute_circle_area_from_radius(0)
+
+    def test_on_negative_radius(self):
+        """Testing with the negative radius"""
+        with self.assertRaises(ValueError):
+            compute_circle_area_from_radius(-1)
+
 
 if __name__ == "__main__":
     unittest.main()
-
