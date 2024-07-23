@@ -4,6 +4,7 @@ import unittest
 from typing import Any
 from mindbox_squares import triangle_is_valid
 from mindbox_squares import compute_circle_area_from_radius
+from mindbox_squares import type_of_triangle
 
 class TestTriangle(unittest.TestCase):
     """Testing Traingle"""
@@ -36,6 +37,21 @@ class TestCircle(unittest.TestCase):
         """Testing with the negative radius"""
         with self.assertRaises(ValueError):
             compute_circle_area_from_radius(-1)
+
+
+class TestTriangleType(unittest.TestCase):
+    """Testing the triangle type"""
+    def test_versatile_triangle(self):
+        """Testing with the versatile triangle"""
+        self.assertEqual(type_of_triangle(2, 1, 2.9), "versatile")
+
+    def test_equiliteral_triangle(self):
+        """Testing with the equilateral triangle"""
+        self.assertEqual(type_of_triangle(2, 2, 2), "equilateral")
+
+    def test_isosceles_triangle(self):
+        """Testing with the isosceles triangle"""
+        self.assertEqual(type_of_triangle(2, 1, 2), "isosceles")
 
 
 if __name__ == "__main__":
