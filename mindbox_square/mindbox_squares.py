@@ -17,8 +17,8 @@ def compute_circle_area_from_radius(radius:float) -> float:
     """Calculating the area of the circle by its radius rounded to .4 digits"""
     if radius > 0:
         return round(pi * radius ** 2, 4)
-    logger.error('Value is not correct! Please check it.')
-    raise ValueError('Value is not correct! Please check it.')
+    logger.error('Value is not correct!')
+    raise ValueError('Value is not correct!')
 
 
 def compute_triangle_area_by_sides(a:float, b:float, c:float) -> float:
@@ -27,8 +27,8 @@ def compute_triangle_area_by_sides(a:float, b:float, c:float) -> float:
         p = (a + b + c) / 2
         result = round(sqrt(p * (p-a) * (p-b) * (p-c)), 4)
         return result
-    logger.error('Not all values are correct! Please check it.')
-    raise ValueError('Not all values are correct! Please check it.')
+    logger.error('Not all values are correct!')
+    raise ValueError('Not all values are correct!')
 
 
 def type_of_triangle(a:float, b:float, c:float) -> str:
